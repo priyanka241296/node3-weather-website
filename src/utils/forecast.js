@@ -31,7 +31,8 @@ const forecast = function (latitude, longitude, callback) {
           body.current.temperature +
           " dregrees out. There is a " +
           body.current.feelslike +
-          "% chance of rain"
+          "% chance of rain  and weather code  is " +
+          body.current.weather_code
       );
     }
   });
