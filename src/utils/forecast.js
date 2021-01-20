@@ -24,15 +24,19 @@ const forecast = function (latitude, longitude, callback) {
     } else if (body.error) {
       callback("Unable to find location. Try another search.", undefined);
     } else {
+      //console.log(body.current.location.name);
       callback(
         undefined,
         body.current.weather_descriptions[0] +
           ". It is currently " +
           body.current.temperature +
-          " dregrees out. There is a " +
+          " dregrees out. It feels like " +
           body.current.feelslike +
-          "% chance of rain  and weather code  is " +
-          body.current.weather_code
+          " degrees out." +
+          body.current.weather_code +
+          " . The humidity is " +
+          body.current.humidity +
+          " %"
       );
     }
   });
